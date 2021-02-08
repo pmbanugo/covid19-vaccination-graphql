@@ -1,0 +1,35 @@
+{
+  "name": "covid19-vaccination-graphql",
+  "version": "1.0.0",
+  "description": "A lean GraphQL API to get vaccination data. The data is based on the CSV data gotten from Our World In Data.",
+  "main": "src/index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=15.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" ",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmbanugo/covid19-vaccination-graphql.git"
+  },
+  "keywords": [
+    "covid-19",
+    "observability",
+    "cloud-native"
+  ],
+  "author": "Peter Mbanugo",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/pmbanugo/covid19-vaccination-graphql/issues"
+  },
+  "homepage": "https://github.com/pmbanugo/covid19-vaccination-graphql#readme",
+  "dependencies": {
+    "csv-parse": "^4.15.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0"
+  }
+}
