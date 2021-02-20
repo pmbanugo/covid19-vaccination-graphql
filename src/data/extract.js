@@ -6,11 +6,20 @@ const csvURL =
   process.env.CSV_URL ||
   "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv";
 
-const parseOption = {
+const parserConfig = {
   columns: true,
   skip_empty_lines: true,
   skip_lines_with_error: true,
 };
+
+const transform = (record) => ({
+  isoCode: record.iso_code,
+  location: record.location,
+  date: record.date,
+  totalVaccinations: record.total_vaccinations,
+  peopleVaccinated: record.people_vaccinated,
+  peopleFullyVaccinated: record.people_fully_vaccinated,
+});
 
 export default function () {
   return new Promise(function (resolve, reject) {
@@ -27,13 +36,12 @@ export default function () {
         );
       }
 
-      const parser = parse(parseOption);
+      const parser = parse(parserConfig);
       const records = [];
-      // Use the readable stream api
       parser.on("readable", () => {
         let record;
         while ((record = parser.read())) {
-          records.push(record);
+          records.push(transform(record));
         }
       });
       parser.on("error", function (err) {
