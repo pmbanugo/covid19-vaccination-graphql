@@ -27,9 +27,11 @@
   },
   "homepage": "https://github.com/pmbanugo/covid19-vaccination-graphql#readme",
   "dependencies": {
+    "@newrelic/apollo-server-plugin": "^0.1.2",
     "apollo-server": "^2.21.0",
     "csv-parse": "^4.15.1",
-    "graphql": "^15.5.0"
+    "graphql": "^15.5.0",
+    "newrelic": "latest"
   },
   "devDependencies": {
     "eslint": "^7.19.0"
