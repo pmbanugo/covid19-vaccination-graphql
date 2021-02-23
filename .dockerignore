@@ -1,0 +1,10 @@
+Dockerfile
+README.md
+LICENSE
+node_modules
+npm-debug.log
+.nuxt
+.eslintcache
+.eslintrc.json
+.gitignore
+.vscode
